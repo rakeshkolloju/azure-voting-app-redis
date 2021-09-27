@@ -7,6 +7,12 @@ pipeline {
             echo "$GIT_BRANCH"
          }
       }
+      stage('rkTest')
+      {
+         steps{
+         sh(script: 'echo Hello World')
+         }
+      }
       stage('Docker Build') {
          steps {
             sh(script: 'docker images -a')
